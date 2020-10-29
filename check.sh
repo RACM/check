@@ -94,7 +94,7 @@ if [[ $mode -eq 1 ]]; then
 
 	IP=`ip a | grep eth0.2998 | grep inet | awk '{print$2}' | cut -d \/ -f 1`
 
-	timeout 10 iperf -B ${IP} -c 18.144.83.129 -p 5100 -t 5 -u -b ${udpbw}M 2>/dev/null > /tmp/udpUp
+	timeout 10 iperf -B ${IP} -c ${cIP} -p 5100 -t 5 -u -b ${udpbw}M 2>/dev/null > /tmp/udpUp
 #	sleep 2
 #	timeout 10 iperf -B ${IP} -c 18.144.83.129 -p 5100 -t 5 -u -b ${udpbw}M -R > /tmp/udpDown
 
